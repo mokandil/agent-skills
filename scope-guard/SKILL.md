@@ -17,11 +17,11 @@ This skill enforces three hard checkpoints that prevent all three.
 
 ## Checkpoint 0: Feature Inventory (before redesigning existing code)
 
-**Applies when:** the task is a redesign, refactor, or significant modification of an existing component, page, or module — not a greenfield addition.
+**Applies when:** the task is a redesign, refactor, or significant modification of any existing file — frontend component, backend module, API endpoint, configuration, service, or utility — not a greenfield addition.
 
 Before writing a single line, read the file and list everything that currently exists:
 
-> "This file currently has: [feature A], [config option B], [behavior C], [UI state D]. I will preserve ALL of these unless you explicitly tell me to remove one."
+> "This file currently has: [feature A], [config option B], [behavior C], [endpoint/method D]. I will preserve ALL of these unless you explicitly tell me to remove one."
 
 Then, for each item in the list, mark it:
 - **PRESERVE** — must survive unchanged after my edits
@@ -29,7 +29,7 @@ Then, for each item in the list, mark it:
 
 After making changes, verify every PRESERVE item is still present and working before committing. If any PRESERVE item disappeared from the diff, stop — do not commit.
 
-**Why this matters:** Redesign tasks are the highest-risk scenario. The agent rewrites layout/structure and silently drops a setting that was deliberately there. The user doesn't notice for several sprints and has to excavate git history to recover it.
+**Why this matters:** Redesign tasks are the highest-risk scenario — frontend or backend. The agent rewrites structure and silently drops a config value, an API parameter, a middleware hook, or a UI behavior that was deliberately there. The user doesn't notice for several sprints and has to excavate git history to recover it. This risk grows with codebase size: the more files exist, the easier it is for a change to propagate silently.
 
 ---
 
