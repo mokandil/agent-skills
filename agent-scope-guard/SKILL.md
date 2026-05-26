@@ -1,5 +1,5 @@
 ---
-name: scope-guard
+name: agent-scope-guard
 description: Use when starting any coding task or before committing changes — enforces scope declaration before first edit, feature inventory before redesigns, and diff review before every commit to catch scope creep, feature erasure, and silent regressions.
 ---
 
